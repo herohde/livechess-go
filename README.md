@@ -1,2 +1,2 @@
 # livechess-go
-DGT Livechess go client
+Unofficial DGT Livechess 2.2.6 go client.
