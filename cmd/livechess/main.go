@@ -14,7 +14,7 @@ import (
 	"os"
 )
 
-var version = build.NewVersion(0, 1, 0)
+var version = build.NewVersion(0, 1, 1)
 
 var (
 	serial = flag.String("serial", "auto", "Board selection by serial number (default: auto)")
@@ -49,7 +49,7 @@ func main() {
 	case "eboards":
 		boards, err := livechess.DefaultClient.EBoards(ctx)
 		if err != nil {
-			logw.Exitf(ctx, ": %v", command)
+			logw.Exitf(ctx, "Failed to list boards: %v", err)
 		}
 		for _, board := range boards {
 			buf, _ := json.Marshal(board)
